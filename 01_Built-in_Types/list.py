@@ -15,6 +15,11 @@ print(type(sys.argv))
 print(id(sys.argv))
 print(type(sys.argv) is list)
 
+my_list = range(10)
+print(my_list)
+del my_list[-1]
+print(my_list)
+
 if len(sys.argv) != 2:
     print("%s filename" % sys.argv[0])
     raise SystemExit(1)
