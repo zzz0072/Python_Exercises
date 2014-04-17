@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 import sys
 
-print ("argv: %d" % len(sys.argv))
+print("argv: %d" % len(sys.argv))
+
+# Object related test
+print(type(sys.argv))
+print(id(sys.argv))
+print(type(sys.argv) is list)
 
 if len(sys.argv) != 2:
     print("%s filename" % sys.argv[0])
