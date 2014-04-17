@@ -33,6 +33,25 @@ var_arg(1, 2, 3, 4 ,5)
 var_arg("I am ", "zzz")
 var_arg(range(3,7))
 
+# Funtional ? programing: filter
+def f_callback(x):
+    return x > 0  # a condition
+
+print filter(f_callback, range(-5, 10))
+
+
+# Funtional ? programing: map
+def m_callback(x):
+    return x * x # an action
+
+print map(m_callback, range(-5, 10))
+
+# Funtional ? programing: reduce
+def r_callback(x, y):
+    return x + y # binary operator
+
+print reduce(r_callback, range(1, 10)) # This sum up 1 to 10
+
 # pass
 print "press ctrl + c to continue"
 
