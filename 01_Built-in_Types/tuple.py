@@ -2,6 +2,15 @@
 import sys
 import pickle
 
+# Test zip, and format in print
+names = ["xxx", "yyy", "zzz"]
+ages  = [18, 19, 20]
+
+persons = zip(names, ages)
+
+for name, age in persons:
+    print "{0}'s age is {1}".format(name, age)
+
 # Check argument
 if len(sys.argv) != 2:
     print("%s filename" % sys.argv[0])
