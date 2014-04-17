@@ -25,6 +25,14 @@ print my_func('3')
 print my_func('1', op2 = 'zzz')
 print my_func('1', op3 = 'xxx')
 
+# variable argument
+def var_arg(*args):
+    print args
+
+var_arg(1, 2, 3, 4 ,5)
+var_arg("I am ", "zzz")
+var_arg(range(3,7))
+
 # pass
 print "press ctrl + c to continue"
 
