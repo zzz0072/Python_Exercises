@@ -3,8 +3,10 @@
 def sum(op1, op2):
     return op1 + op2
 
-print sum(1, 2)
-print sum("I am ", "zzz");
+my_sum = sum
+print my_sum(1, 2)
+print my_sum("I am ", "zzz");
+
 
 # pass
 print "press ctrl + c to continue"
