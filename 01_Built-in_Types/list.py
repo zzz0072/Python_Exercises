@@ -20,6 +20,12 @@ print(my_list)
 del my_list[-1]
 print(my_list)
 
+# Test sort
+my_list = list("port belly")
+
+for i in sorted(my_list):
+    print(i)
+
 # Try to write number to a file, then read 
 # it later, and convert to float
 if len(sys.argv) != 2:
