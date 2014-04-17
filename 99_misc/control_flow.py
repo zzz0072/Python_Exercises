@@ -17,6 +17,14 @@ my_accu = accumulate
 init = 11
 print my_accu() # is 12 + 12 rather than 11 + 11
 
+# Default value in a function 2
+def my_func(op1, op2 = '2', op3 = '3'): # non-default argument first
+    return op1 + op2 + op3
+
+print my_func('3')
+print my_func('1', op2 = 'zzz')
+print my_func('1', op3 = 'xxx')
+
 # pass
 print "press ctrl + c to continue"
 
