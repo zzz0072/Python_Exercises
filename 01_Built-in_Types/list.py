@@ -4,6 +4,13 @@ import sys
 print("argv: %d" % len(sys.argv))
 
 # Object related test
+# type and id are unique
+# ref: https://docs.python.org/2/reference/datamodel.html
+# mutable object: value can be changed
+# immutable object: value can NOT be changed after created
+#                   This means readonly
+#   ex: string, numbers, tuple
+
 print(type(sys.argv))
 print(id(sys.argv))
 print(type(sys.argv) is list)
