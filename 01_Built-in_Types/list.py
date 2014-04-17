@@ -32,5 +32,5 @@ fval = [float(line) for line in lines]
 print(fval)
 print("len: %d" % len(fval))
 
-for i in fval:
-    print i
+for i in range(len(fval)):
+    print i, " ", fval[i]
