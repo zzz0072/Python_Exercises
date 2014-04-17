@@ -10,16 +10,18 @@ print("argv: %d" % len(sys.argv))
 # immutable object: value can NOT be changed after created
 #                   This means readonly
 #   ex: string, numbers, tuple
-
 print(type(sys.argv))
 print(id(sys.argv))
 print(type(sys.argv) is list)
 
+# Test del
 my_list = range(10)
 print(my_list)
 del my_list[-1]
 print(my_list)
 
+# Try to write number to a file, then read 
+# it later, and convert to float
 if len(sys.argv) != 2:
     print("%s filename" % sys.argv[0])
     raise SystemExit(1)
