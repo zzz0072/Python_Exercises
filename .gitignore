@@ -54,3 +54,7 @@ docs/_build/
 
 # vim
 .*.swp
+
+# compiled files
+*.pyc
+*.pyo
