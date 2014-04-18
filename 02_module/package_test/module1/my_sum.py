@@ -1,9 +1,9 @@
 #/usr/bin/env python
-def my_sum(x, y):
-    return x + y
+from ..module2 import my_print
 
-def my_sum2(x, y):
-    return x + y
+def my_sum(x, y):
+    result = x + y
+    my_print.my_print(result)
 
 # To run method alone
 if __name__ == "__main__":
@@ -12,6 +12,6 @@ if __name__ == "__main__":
         print("%s str1 str2" % sys.argv[0])
         raise SystemExit(1)
 
-    print(my_sum(sys.argv[1], sys.argv[2]))
+    my_sum(sys.argv[1], sys.argv[2])
 
 
