@@ -35,6 +35,12 @@ class my_error(Exception):
         return repr(self.value)
 
 try:
-    raise my_error("ouch...");
+    rnd_err = random.randint(0, 1)
+    if rnd_err:
+        raise my_error("ouch...");
+    else:
+        print("Lucky <3");
 except my_error as e:
     print(e)
+finally:
+    print("See ya..")
