@@ -10,3 +10,6 @@ print (my_sum("I am", " zzz 2"))
 # method 3, no seed to include namespace
 from module import *
 print (my_sum2("I am", " zzz 3"))
+
+# List load modules
+print(dir())
