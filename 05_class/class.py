@@ -94,3 +94,26 @@ my_rec.age  = 12345
 
 print("rec: {0} {1}".format(my_rec.name, my_rec.age))
 
+#------------------------------------------------------------------------------
+# Test exception
+class first:
+    pass
+
+class second(first):
+    pass
+
+class third(second):
+    pass
+
+for ins in [first, second, third]:
+    # MUST with reversed order
+    # ref: https://docs.python.org/2/tutorial/classes.html#exceptions-are-classes-too
+    try:
+        raise ins()
+    except third:
+        print(ins)
+    except second:
+        print(ins)
+    except first:
+        print(ins)
+
