@@ -83,3 +83,14 @@ print(i.get_vars())
 i.set_vars(3, 4)
 print(i.get_vars())
 
+#------------------------------------------------------------------------------
+# Test as a record
+class rec:
+    pass
+
+my_rec = rec()
+my_rec.name = "zzz"
+my_rec.age  = 12345
+
+print("rec: {0} {1}".format(my_rec.name, my_rec.age))
+
