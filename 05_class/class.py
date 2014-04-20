@@ -12,7 +12,7 @@ print(i.__doc__)
 class bar:
     x = 10
     y = 20
-    __hidden = 30
+    __hidden = 30 # Actually symbol is _bar__hidden, so can not write ousite?
     def get_hidden(self):
         return self.__hidden
 
@@ -26,9 +26,13 @@ print("{0} {1} {2}".format(i.x, i.y, i.get_hidden()))
 i.set_hidden("zzz")
 print("{0} {1} {2}".format(i.x, i.y, i.get_hidden()))
 
-# Modify hidden data diretly
+# Modify hidden data diretly, not work
 i.__hidden = 11
-print("{0} {1} {2}".format(i.x, i.y, i.get_hidden()))
+print("new hidden: {0} {1} {2}".format(i.x, i.y, i.get_hidden()))
+
+# with _bar_hidden
+i._bar__hidden = "xxx"
+print("new hidden with _bar prefix: {0} {1} {2}".format(i.x, i.y, i.get_hidden()))
 
 # Second instance, the value is new now
 j = bar()
