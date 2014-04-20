@@ -7,7 +7,8 @@ def show_mod_var():
         print("You can not reference a global value inner function");
         pass
     # ref: https://docs.python.org/2/tutorial/classes.html#python-scopes-and-namespaces
-    # Anywrite to this varalbe will cause a UnboundLocalError!!!!!
+    # Anywrite to this varalbe will cause a UnboundLocalError!!!!
+    # May due to python treat function variable as local
     # You can un-comment line 11 to test
     # g_var = 100
     print(g_var)
