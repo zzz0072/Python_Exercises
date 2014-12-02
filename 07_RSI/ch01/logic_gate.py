@@ -81,6 +81,17 @@ class NandGate(BinaryGate):
 
         return int(not(pinA == 1 and pinB == 1))
 
+class XorGate(BinaryGate):
+    def __init__(self, label):
+        BinaryGate.__init__(self, label)
+
+    def calcLogicOutput(self):
+        pinA = self.getPinA()
+        pinB = self.getPinB()
+
+        return int(pinA != pinB)
+
+
 class UnaryGate(LogicGate):
     def __init__(self, label):
         LogicGate.__init__(self, label)
@@ -106,6 +117,19 @@ class NotGate(UnaryGate):
     def calcLogicOutput(self):
         return int(not self.getPin())
 
+class CommonInput(LogicGate):
+    def __init__(self, label):
+        LogicGate.__init__(self, label)
+        self.pin = None
+
+    def calcLogicOutput(self):
+        if self.pin == None:
+            self.pin = input("Enter Pin value for " + self.name + ": ")
+            self.pin = int(self.pin) >= 1
+            return self.pin
+        else:
+            return self.pin
+
 class Connector:
     def __init__(self, fromGate, toGate):
         self.fromGate = fromGate
@@ -119,12 +143,19 @@ class Connector:
     def getTo(self):
         return self.toGate
 
-if __name__ == "__main__":
-    #g1 = NandGate("l1")
-    #print(g1.calcLogicOutput())
-    #g2 = NorGate("12")
-    #print(g2.calcLogicOutput())
+def HalfAdder():
+    g1 = CommonInput("A")
+    g2 = CommonInput("B")
+    g3 = XorGate("Sum")
+    g4 = AndGate("Carrier")
+    c1 = Connector(g1, g3)
+    c2 = Connector(g2, g3)
+    c3 = Connector(g1, g4)
+    c4 = Connector(g2, g4)
+    print(g3.getOutput())
+    print(g4.getOutput())
 
+def Test1():
     g1 = AndGate("G1")
     g2 = AndGate("G2")
     g3 = OrGate("G3")
@@ -134,6 +165,8 @@ if __name__ == "__main__":
     c3 = Connector(g3, g4)
     print(g4.getOutput())
 
+
+def Test2():
     g1 = AndGate("G1")
     g2 = AndGate("G2")
     g3 = NotGate("G3")
@@ -146,3 +179,13 @@ if __name__ == "__main__":
     print(g5.getOutput())
 
 
+    g1 = XorGate("xor")
+    print(g1.getOutput())
+
+if __name__ == "__main__":
+    #g1 = NandGate("l1")
+    #print(g1.calcLogicOutput())
+    #g2 = NorGate("12")
+    #print(g2.calcLogicOutput())
+    #Test1()
+    HalfAdder()
